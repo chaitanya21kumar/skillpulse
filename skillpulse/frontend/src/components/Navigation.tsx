@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { BarChart3, Users, Upload, Menu, X, Zap } from 'lucide-react';
+import { BarChart3, Users, Upload, Menu, X, Zap, Grid } from 'lucide-react';
 
 const Navigation: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -9,6 +9,7 @@ const Navigation: React.FC = () => {
   const links = [
     { href: '/', label: 'Dashboard', icon: BarChart3 },
     { href: '/employees', label: 'Employees', icon: Users },
+    { href: '/matrix', label: 'Skill Matrix', icon: Grid },
     { href: '/import', label: 'Import Data', icon: Upload },
   ];
 

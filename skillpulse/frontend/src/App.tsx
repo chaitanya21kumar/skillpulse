@@ -3,6 +3,7 @@ import Navigation from './components/Navigation';
 import Dashboard from './components/Dashboard';
 import EmployeeList from './components/EmployeeList';
 import ImportWizard from './components/ImportWizard';
+import SkillMatrix from './components/SkillMatrix';
 import './index.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/employees" element={<EmployeeList />} />
+            <Route path="/matrix" element={<SkillMatrix />} />
             <Route path="/import" element={<ImportWizard />} />
             <Route
               path="*"
