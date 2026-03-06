@@ -4,7 +4,17 @@
 
 **Developer:** Chaitanya Kumar
 **GitHub:** chaitanya21kumar
+**Stack:** FastAPI + React + PostgreSQL + Tailwind CSS
 
 ---
 
-Full documentation coming soon.
+## Planned Sections
+- Overview
+- Features
+- Tech Stack
+- Prerequisites
+- Quick Start
+- API Endpoints
+- CSV Import Format
+- Deployment Guide
+- License
