@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Users, Target, TrendingUp, Award } from 'lucide-react';
 import {
   BarChart, Bar, PieChart, Pie, Cell,
-  XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend,
+  XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
 } from 'recharts';
 import { analyticsService, DashboardStats, TopPerformer } from '../services/analyticsService';
 import StatsCard from './StatsCard';
