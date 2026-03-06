@@ -6,21 +6,27 @@ from app.routes import employees, skills, analytics, import_data
 from app.utils.database import Base, engine
 from app.config import settings
 from app.middleware.error_handler import error_handler_middleware
+import asyncio
 import logging
 
 logger = logging.getLogger(__name__)
 
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    # Startup: create tables
+async def _init_db():
+    """Initialize database tables in background."""
     try:
-        Base.metadata.create_all(bind=engine)
+        loop = asyncio.get_event_loop()
+        await loop.run_in_executor(None, lambda: Base.metadata.create_all(bind=engine))
         logger.info("Database tables created successfully")
     except Exception as e:
-        logger.error(f"Failed to create database tables: {e}")
+        logger.error(f"Database init failed: {e}")
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Fire-and-forget DB init so the app starts immediately
+    asyncio.create_task(_init_db())
     yield
-    # Shutdown: nothing to clean up
 
 
 app = FastAPI(
