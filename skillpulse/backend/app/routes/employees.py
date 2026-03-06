@@ -13,11 +13,18 @@ def get_all_employees(
     skip: int = Query(0, ge=0),
     limit: int = Query(100, le=500),
     department: Optional[str] = None,
+    search: Optional[str] = None,
     db: Session = Depends(get_db),
 ):
     query = db.query(Employee)
     if department:
         query = query.filter(Employee.department == department)
+    if search:
+        query = query.filter(
+            Employee.name.ilike(f"%{search}%") |
+            Employee.email.ilike(f"%{search}%") |
+            Employee.employee_id.ilike(f"%{search}%")
+        )
     return query.offset(skip).limit(limit).all()
 
 
