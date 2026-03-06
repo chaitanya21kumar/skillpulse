@@ -1,5 +1,5 @@
 from pydantic_settings import BaseSettings
-from typing import Optional
+from typing import List
 
 
 class Settings(BaseSettings):
@@ -9,6 +9,11 @@ class Settings(BaseSettings):
     algorithm: str = "HS256"
     access_token_expire_minutes: int = 30
     debug: bool = True
+    allowed_origins: List[str] = ["*"]
+
+    @property
+    def is_production(self) -> bool:
+        return not self.debug
 
     class Config:
         env_file = ".env"
