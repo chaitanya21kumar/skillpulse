@@ -111,3 +111,52 @@ def test_skill_matrix():
     response = client.get("/api/skills/matrix")
     assert response.status_code == 200
     assert isinstance(response.json(), list)
+
+
+def test_top_performers():
+    response = client.get("/api/analytics/top-performers")
+    assert response.status_code == 200
+    assert isinstance(response.json(), list)
+
+
+def test_skill_gaps():
+    response = client.get("/api/analytics/skill-gaps")
+    assert response.status_code == 200
+    data = response.json()
+    assert "department_gaps" in data
+    assert "total_gaps" in data
+
+
+def test_skill_distribution():
+    response = client.get("/api/analytics/skill-distribution")
+    assert response.status_code == 200
+    assert isinstance(response.json(), list)
+
+
+def test_department_averages():
+    response = client.get("/api/analytics/department-averages")
+    assert response.status_code == 200
+    assert isinstance(response.json(), list)
+
+
+def test_update_employee():
+    # First create
+    create_resp = client.post(
+        "/api/employees/",
+        json={
+            "employee_id": "EMP003",
+            "name": "Update Test",
+            "email": "update@example.com",
+            "department": "QA",
+            "designation": "QA Engineer",
+            "joining_date": "2024-01-01T00:00:00",
+        },
+    )
+    emp_id = create_resp.json()["id"]
+    # Then update
+    update_resp = client.put(
+        f"/api/employees/{emp_id}",
+        json={"department": "Engineering"},
+    )
+    assert update_resp.status_code == 200
+    assert update_resp.json()["department"] == "Engineering"
