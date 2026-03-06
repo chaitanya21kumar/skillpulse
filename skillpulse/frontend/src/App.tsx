@@ -4,6 +4,7 @@ import Dashboard from './components/Dashboard';
 import EmployeeList from './components/EmployeeList';
 import ImportWizard from './components/ImportWizard';
 import SkillMatrix from './components/SkillMatrix';
+import SkillGaps from './components/SkillGaps';
 import './index.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/employees" element={<EmployeeList />} />
             <Route path="/matrix" element={<SkillMatrix />} />
+            <Route path="/gaps" element={<SkillGaps />} />
             <Route path="/import" element={<ImportWizard />} />
             <Route
               path="*"
