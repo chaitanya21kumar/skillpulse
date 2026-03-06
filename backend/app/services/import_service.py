@@ -1,4 +1,3 @@
-import pandas as pd
 from sqlalchemy.orm import Session
 from app.models.employee import Employee
 from app.models.skill import Skill, EmployeeSkill
@@ -9,6 +8,7 @@ from typing import Dict
 class ImportService:
     @staticmethod
     def import_employees_from_csv(file_path: str, db: Session) -> Dict:
+        import pandas as pd  # lazy import to avoid slow startup
         try:
             df = (
                 pd.read_csv(file_path)
@@ -55,6 +55,7 @@ class ImportService:
 
     @staticmethod
     def import_employee_skills_from_csv(file_path: str, db: Session) -> Dict:
+        import pandas as pd  # lazy import to avoid slow startup
         try:
             df = (
                 pd.read_csv(file_path)
