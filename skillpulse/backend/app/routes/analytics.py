@@ -101,3 +101,28 @@ def get_top_performers(limit: int = Query(10, le=50), db: Session = Depends(get_
         }
         for r in results
     ]
+
+
+@router.get("/department-averages")
+def get_department_averages(db: Session = Depends(get_db)):
+    """Return average skill proficiency per department."""
+    results = (
+        db.query(
+            Employee.department,
+            func.avg(EmployeeSkill.proficiency_level).label("avg_level"),
+            func.count(distinct(Employee.id)).label("employee_count"),
+        )
+        .join(EmployeeSkill, Employee.id == EmployeeSkill.employee_id)
+        .group_by(Employee.department)
+        .order_by(func.avg(EmployeeSkill.proficiency_level).desc())
+        .all()
+    )
+
+    return [
+        {
+            "department": r[0],
+            "avg_proficiency": round(float(r[1]), 2) if r[1] else 0,
+            "employee_count": r[2],
+        }
+        for r in results
+    ]
