@@ -1,0 +1,16 @@
+employee_id,skill_name,proficiency_level
+EMP101,Python,4
+EMP101,React,4
+EMP101,TypeScript,3
+EMP102,Figma,5
+EMP102,JavaScript,3
+EMP102,React,4
+EMP103,Python,5
+EMP103,Machine Learning,5
+EMP103,PostgreSQL,3
+EMP104,Docker,5
+EMP104,Python,3
+EMP104,FastAPI,4
+EMP105,Python,2
+EMP105,JavaScript,3
+EMP105,PostgreSQL,2

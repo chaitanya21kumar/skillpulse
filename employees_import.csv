@@ -1,0 +1,6 @@
+employee_id,name,email,department,designation,joining_date
+EMP101,Henry Adams,henry.adams@company.com,Engineering,Full Stack Developer,2024-03-01
+EMP102,Isabella Brown,isabella.brown@company.com,Design,UX Designer,2024-04-15
+EMP103,James Carter,james.carter@company.com,Data Science,Data Scientist,2024-02-20
+EMP104,Katherine Davis,katherine.davis@company.com,Engineering,DevOps Engineer,2024-05-10
+EMP105,Liam Evans,liam.evans@company.com,Product,Product Analyst,2024-06-01
