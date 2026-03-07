@@ -32,3 +32,8 @@ class EmployeeSkill(Base):
 
     employee = relationship("Employee", back_populates="skills")
     skill = relationship("Skill", back_populates="employee_skills")
+
+    @property
+    def name(self) -> str:
+        """Expose skill name directly for schema serialization."""
+        return self.skill.name if self.skill else ""

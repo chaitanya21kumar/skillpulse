@@ -8,6 +8,9 @@ class SkillBase(BaseModel):
     name: str
     proficiency_level: int
 
+    class Config:
+        from_attributes = True
+
 
 class EmployeeBase(BaseModel):
     name: str
