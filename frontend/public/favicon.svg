@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Dark navy rounded background -->
+  <rect width="32" height="32" rx="8" fill="#0a0e27"/>
+
+  <!-- Gold gradient definition -->
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Lightning bolt (Zap icon, centered) -->
+  <path
+    d="M18 4 L10 18 L15.5 18 L14 28 L22 14 L16.5 14 Z"
+    fill="url(#gold)"
+  />
+</svg>
