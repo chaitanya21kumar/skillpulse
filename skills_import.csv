@@ -1,16 +1,19 @@
 employee_id,skill_name,proficiency_level
-EMP101,Python,4
-EMP101,React,4
-EMP101,TypeScript,3
-EMP102,Figma,5
-EMP102,JavaScript,3
-EMP102,React,4
-EMP103,Python,5
-EMP103,Machine Learning,5
-EMP103,PostgreSQL,3
-EMP104,Docker,5
-EMP104,Python,3
-EMP104,FastAPI,4
-EMP105,Python,2
-EMP105,JavaScript,3
-EMP105,PostgreSQL,2
+EMP101,Python,5
+EMP101,JavaScript,4
+EMP101,React,3
+EMP102,Python,4
+EMP102,FastAPI,5
+EMP102,PostgreSQL,4
+EMP103,Product Strategy,5
+EMP103,Analytics,4
+EMP104,Python,5
+EMP104,TensorFlow,4
+EMP104,Data Analysis,5
+EMP105,Marketing Strategy,5
+EMP105,Content Marketing,4
+EMP106,Kubernetes,5
+EMP106,Docker,5
+EMP106,CI/CD,4
+EMP107,Sales Techniques,5
+EMP107,Client Relations,5

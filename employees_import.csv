@@ -1,6 +1,8 @@
 employee_id,name,email,department,designation,joining_date
-EMP101,Henry Adams,henry.adams@company.com,Engineering,Full Stack Developer,2024-03-01
-EMP102,Isabella Brown,isabella.brown@company.com,Design,UX Designer,2024-04-15
-EMP103,James Carter,james.carter@company.com,Data Science,Data Scientist,2024-02-20
-EMP104,Katherine Davis,katherine.davis@company.com,Engineering,DevOps Engineer,2024-05-10
-EMP105,Liam Evans,liam.evans@company.com,Product,Product Analyst,2024-06-01
+EMP101,Sarah Johnson,sarah.johnson@company.com,Engineering,Tech Lead,2023-01-15
+EMP102,Michael Brown,michael.brown@company.com,Engineering,Senior Engineer,2023-02-20
+EMP103,Jennifer Lee,jennifer.lee@company.com,Product,Product Manager,2023-03-10
+EMP104,Christopher Zhang,chris.zhang@company.com,Data Science,Data Engineer,2023-04-05
+EMP105,Amanda Martinez,amanda.martinez@company.com,Marketing,Marketing Manager,2023-05-12
+EMP106,Daniel Wang,daniel.wang@company.com,DevOps,DevOps Engineer,2023-06-18
+EMP107,Lisa Anderson,lisa.anderson@company.com,Sales,Sales Director,2023-07-22

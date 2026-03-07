@@ -26,11 +26,27 @@ class ImportService:
 
             for idx, row in df.iterrows():
                 try:
+                    # Upsert: find by employee_id first, then by email
                     existing = db.query(Employee).filter(
-                        Employee.email == row["email"]
+                        Employee.employee_id == str(row["employee_id"])
                     ).first()
-
                     if not existing:
+                        existing = db.query(Employee).filter(
+                            Employee.email == row["email"]
+                        ).first()
+
+                    if existing:
+                        # Update existing record with new data
+                        existing.name = row["name"]
+                        existing.email = row["email"]
+                        existing.department = row["department"]
+                        existing.designation = row["designation"]
+                        existing.employee_id = str(row["employee_id"])
+                        existing.status = "active"
+                        if "joining_date" in row and row["joining_date"]:
+                            existing.joining_date = pd.to_datetime(row["joining_date"])
+                        imported_count += 1
+                    else:
                         new_employee = Employee(
                             employee_id=str(row["employee_id"]),
                             name=row["name"],
